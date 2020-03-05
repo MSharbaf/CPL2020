@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.example.cpl.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.example.cpl.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.example.cpl.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.example.cpl,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.eclipse.ocl.xtext.essentialocl;bundle-version="1.4.0",
+ org.eclipse.ocl.xtext.essentialocl.ui;bundle-version="1.4.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
