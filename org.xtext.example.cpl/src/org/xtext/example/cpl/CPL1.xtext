@@ -1,0 +1,44 @@
+grammar org.xtext.example.cpl.CPL with org.eclipse.ocl.xtext.completeocl.CompleteOCL 
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.eclipse.org/ocl/2015/Pivot" as pivot
+import "http://www.eclipse.org/ocl/2015/BaseCS" as base
+import "http://www.eclipse.org/ocl/2015/EssentialOCLCS" as essentialocl
+import "http://www.eclipse.org/ocl/2015/CompleteOCLCS" as completeocl
+
+generate cPL "http://www.xtext.org/example/cpl/CPL"
+
+TopLevelCP:
+	'conflict' name=Identifier '{'
+		(ownedImports+=ImportCP)+
+		('inmodel' UnrestrictedName '{' ownedContexts+=ContextDeclCS+ '}')+
+		(ownedRelation+=RelationCP)?
+		(ownedMessage+=MessageCP)? 
+	'}'
+;
+
+ImportCP returns base::ImportCS:
+	('import' | 'domain') (name=Identifier ':')? ownedPathName=URIPathNameCS (isAll?='::*')?  
+;
+
+RelationCP:
+	'where' '{'  
+		(('or'|'and')? ownedConditions+=ConditionCS)+
+	'}'
+;
+
+MessageCP:
+	'message' '{' ownedExpression=STRING '}'
+;
+
+ConditionCS:
+	(ownedElementA=FQN)? ('isEquivalent'|'isContradict'|'>'|'<'|'=='|'<>'|'!'|'>='|'=<'|'IN'|'NotIN')? (ownedElementB=FQN) 
+;
+
+FQN:
+	(UnrestrictedName|ID) (("."|"->") (UnrestrictedName|ID) ('(')? (')')? )*
+;
+
+terminal STRING: 
+    '"' ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"'
+;

@@ -10,5 +10,11 @@ Require-Bundle: org.xtext.example.cpl,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
  org.eclipse.ocl.xtext.essentialocl;bundle-version="1.4.0",
- org.eclipse.ocl.xtext.essentialocl.ui;bundle-version="1.4.0"
+ org.eclipse.ocl.xtext.essentialocl.ui;bundle-version="1.4.0",
+ org.eclipse.ocl.xtext.completeocl;bundle-version="1.4.0",
+ org.eclipse.ocl.xtext.completeocl.ui;bundle-version="1.4.0",
+ org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.xtext.example.cpl.ide.contentassist.antlr.internal,
+ org.xtext.example.cpl.ide.contentassist.antlr
+
