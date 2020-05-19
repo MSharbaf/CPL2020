@@ -1,2 +1,2 @@
 # CPL2020
- CPL and OCL
+Conflict Pattern Language (CPL)
