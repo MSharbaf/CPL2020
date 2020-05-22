@@ -472,9 +472,9 @@ ruleConditionCS returns [EObject current=null]
 				newLeafNode(otherlv_4, grammarAccess.getConditionCSAccess().getLessThanSignKeyword_1_3());
 			}
 			    |
-			otherlv_5='=='
+			otherlv_5='='
 			{
-				newLeafNode(otherlv_5, grammarAccess.getConditionCSAccess().getEqualsSignEqualsSignKeyword_1_4());
+				newLeafNode(otherlv_5, grammarAccess.getConditionCSAccess().getEqualsSignKeyword_1_4());
 			}
 			    |
 			otherlv_6='<>'

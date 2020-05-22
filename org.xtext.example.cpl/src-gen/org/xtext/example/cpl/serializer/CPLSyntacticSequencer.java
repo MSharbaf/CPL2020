@@ -22,7 +22,7 @@ import org.xtext.example.cpl.services.CPLGrammarAccess;
 public class CPLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CPLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ConditionCS___EqualsSignEqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q;
+	protected AbstractElementAlias match_ConditionCS___EqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q;
 	protected AbstractElementAlias match_DefOperationCS_UnrestrictedNameParserRuleCall_2_q;
 	protected AbstractElementAlias match_DefPropertyCS_UnrestrictedNameParserRuleCall_2_q;
 	protected AbstractElementAlias match_ImportCP_DomainKeyword_0_1_or_ImportKeyword_0_0;
@@ -38,7 +38,7 @@ public class CPLSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CPLGrammarAccess) access;
-		match_ConditionCS___EqualsSignEqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getEqualsSignEqualsSignKeyword_1_4()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getEqualsSignLessThanSignKeyword_1_8()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getExclamationMarkKeyword_1_6()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getGreaterThanSignEqualsSignKeyword_1_7()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getGreaterThanSignKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getINKeyword_1_9()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getIsContradictKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getIsEquivalentKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getLessThanSignGreaterThanSignKeyword_1_5()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getLessThanSignKeyword_1_3()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getNotINKeyword_1_10()));
+		match_ConditionCS___EqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getEqualsSignKeyword_1_4()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getEqualsSignLessThanSignKeyword_1_8()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getExclamationMarkKeyword_1_6()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getGreaterThanSignEqualsSignKeyword_1_7()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getGreaterThanSignKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getINKeyword_1_9()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getIsContradictKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getIsEquivalentKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getLessThanSignGreaterThanSignKeyword_1_5()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getLessThanSignKeyword_1_3()), new TokenAlias(false, false, grammarAccess.getConditionCSAccess().getNotINKeyword_1_10()));
 		match_DefOperationCS_UnrestrictedNameParserRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getDefOperationCSAccess().getUnrestrictedNameParserRuleCall_2());
 		match_DefPropertyCS_UnrestrictedNameParserRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getDefPropertyCSAccess().getUnrestrictedNameParserRuleCall_2());
 		match_ImportCP_DomainKeyword_0_1_or_ImportKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportCPAccess().getDomainKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getImportCPAccess().getImportKeyword_0_0()));
@@ -79,8 +79,8 @@ public class CPLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_ConditionCS___EqualsSignEqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q.equals(syntax))
-				emit_ConditionCS___EqualsSignEqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_ConditionCS___EqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q.equals(syntax))
+				emit_ConditionCS___EqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DefOperationCS_UnrestrictedNameParserRuleCall_2_q.equals(syntax))
 				emit_DefOperationCS_UnrestrictedNameParserRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DefPropertyCS_UnrestrictedNameParserRuleCall_2_q.equals(syntax))
@@ -114,7 +114,7 @@ public class CPLSyntacticSequencer extends AbstractSyntacticSequencer {
 	  *         'isContradict' | 
 	  *         '>' | 
 	  *         '<' | 
-	  *         '==' | 
+	  *         '=' | 
 	  *         '<>' | 
 	  *         '!' | 
 	  *         '>=' | 
@@ -127,7 +127,7 @@ public class CPLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) ownedElementB=FQN
 	 *     ownedElementA=FQN (ambiguity) ownedElementB=FQN
 	 */
-	protected void emit_ConditionCS___EqualsSignEqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ConditionCS___EqualsSignKeyword_1_4_or_EqualsSignLessThanSignKeyword_1_8_or_ExclamationMarkKeyword_1_6_or_GreaterThanSignEqualsSignKeyword_1_7_or_GreaterThanSignKeyword_1_2_or_INKeyword_1_9_or_IsContradictKeyword_1_1_or_IsEquivalentKeyword_1_0_or_LessThanSignGreaterThanSignKeyword_1_5_or_LessThanSignKeyword_1_3_or_NotINKeyword_1_10__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

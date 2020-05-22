@@ -40,7 +40,7 @@ ContextDeclCS returns cOCL::ContextDeclCS:
 
 ConditionCS:
 	(ownedElementA=[DeclarationCP|FQN])? 
-	('isEquivalent'|'isContradict'|'>'|'<'|'=='|'<>'|'!'|'>='|'=<'|'IN'|'NotIN')? 
+	('isEquivalent'|'isContradict'|'>'|'<'|'='|'<>'|'!'|'>='|'=<'|'IN'|'NotIN')? 
 	(ownedElementB=[DeclarationCP|FQN]) 
 ;
 

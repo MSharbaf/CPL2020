@@ -5,6 +5,7 @@ package org.xtext.example.cpl.cPL;
 
 import org.eclipse.emf.common.util.EList;
 
+//import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS;
 import org.eclipse.ocl.xtext.basecs.ImportCS;
 

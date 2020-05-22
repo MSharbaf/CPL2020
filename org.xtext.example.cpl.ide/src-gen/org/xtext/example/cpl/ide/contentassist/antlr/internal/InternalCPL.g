@@ -2729,9 +2729,9 @@ rule__ConditionCS__Alternatives_1
 	)
 	|
 	(
-		{ before(grammarAccess.getConditionCSAccess().getEqualsSignEqualsSignKeyword_1_4()); }
-		'=='
-		{ after(grammarAccess.getConditionCSAccess().getEqualsSignEqualsSignKeyword_1_4()); }
+		{ before(grammarAccess.getConditionCSAccess().getEqualsSignKeyword_1_4()); }
+		'='
+		{ after(grammarAccess.getConditionCSAccess().getEqualsSignKeyword_1_4()); }
 	)
 	|
 	(

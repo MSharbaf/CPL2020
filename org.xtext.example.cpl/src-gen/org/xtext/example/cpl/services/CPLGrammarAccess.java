@@ -256,7 +256,7 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIsContradictKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		private final Keyword cGreaterThanSignKeyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
 		private final Keyword cLessThanSignKeyword_1_3 = (Keyword)cAlternatives_1.eContents().get(3);
-		private final Keyword cEqualsSignEqualsSignKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
+		private final Keyword cEqualsSignKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
 		private final Keyword cLessThanSignGreaterThanSignKeyword_1_5 = (Keyword)cAlternatives_1.eContents().get(5);
 		private final Keyword cExclamationMarkKeyword_1_6 = (Keyword)cAlternatives_1.eContents().get(6);
 		private final Keyword cGreaterThanSignEqualsSignKeyword_1_7 = (Keyword)cAlternatives_1.eContents().get(7);
@@ -267,11 +267,11 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOwnedElementBFQNParserRuleCall_2_0 = (RuleCall)cOwnedElementBAssignment_2.eContents().get(0);
 		
 		//ConditionCS:
-		//	ownedElementA=FQN? ('isEquivalent' | 'isContradict' | '>' | '<' | '==' | '<>' | '!' | '>=' | '=<' | 'IN' | 'NotIN')?
+		//	ownedElementA=FQN? ('isEquivalent' | 'isContradict' | '>' | '<' | '=' | '<>' | '!' | '>=' | '=<' | 'IN' | 'NotIN')?
 		//	ownedElementB=FQN;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ownedElementA=FQN? ('isEquivalent' | 'isContradict' | '>' | '<' | '==' | '<>' | '!' | '>=' | '=<' | 'IN' | 'NotIN')?
+		//ownedElementA=FQN? ('isEquivalent' | 'isContradict' | '>' | '<' | '=' | '<>' | '!' | '>=' | '=<' | 'IN' | 'NotIN')?
 		//ownedElementB=FQN
 		public Group getGroup() { return cGroup; }
 		
@@ -281,7 +281,7 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getOwnedElementAFQNParserRuleCall_0_0() { return cOwnedElementAFQNParserRuleCall_0_0; }
 		
-		//('isEquivalent' | 'isContradict' | '>' | '<' | '==' | '<>' | '!' | '>=' | '=<' | 'IN' | 'NotIN')?
+		//('isEquivalent' | 'isContradict' | '>' | '<' | '=' | '<>' | '!' | '>=' | '=<' | 'IN' | 'NotIN')?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//'isEquivalent'
@@ -296,8 +296,8 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 		//'<'
 		public Keyword getLessThanSignKeyword_1_3() { return cLessThanSignKeyword_1_3; }
 		
-		//'=='
-		public Keyword getEqualsSignEqualsSignKeyword_1_4() { return cEqualsSignEqualsSignKeyword_1_4; }
+		//'='
+		public Keyword getEqualsSignKeyword_1_4() { return cEqualsSignKeyword_1_4; }
 		
 		//'<>'
 		public Keyword getLessThanSignGreaterThanSignKeyword_1_5() { return cLessThanSignGreaterThanSignKeyword_1_5; }
@@ -499,7 +499,7 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ConditionCS:
-	//	ownedElementA=FQN? ('isEquivalent' | 'isContradict' | '>' | '<' | '==' | '<>' | '!' | '>=' | '=<' | 'IN' | 'NotIN')?
+	//	ownedElementA=FQN? ('isEquivalent' | 'isContradict' | '>' | '<' | '=' | '<>' | '!' | '>=' | '=<' | 'IN' | 'NotIN')?
 	//	ownedElementB=FQN;
 	public ConditionCSElements getConditionCSAccess() {
 		return pConditionCS;
