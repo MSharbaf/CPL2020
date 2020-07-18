@@ -76,11 +76,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.cpl.cPL.CPLPackage;
 import org.xtext.example.cpl.cPL.ConditionCS;
-import org.xtext.example.cpl.cPL.MessageCP;
+import org.xtext.example.cpl.cPL.DescriptionCP;
 import org.xtext.example.cpl.cPL.RelationCP;
 import org.xtext.example.cpl.cPL.TopLevelCP;
 import org.xtext.example.cpl.services.CPLGrammarAccess;
@@ -236,8 +234,8 @@ public class CPLSemanticSequencer extends CompleteOCLSemanticSequencer {
 			case CPLPackage.CONDITION_CS:
 				sequence_ConditionCS(context, (ConditionCS) semanticObject); 
 				return; 
-			case CPLPackage.MESSAGE_CP:
-				sequence_MessageCP(context, (MessageCP) semanticObject); 
+			case CPLPackage.DESCRIPTION_CP:
+				sequence_DescriptionCP(context, (DescriptionCP) semanticObject); 
 				return; 
 			case CPLPackage.RELATION_CP:
 				sequence_RelationCP(context, (RelationCP) semanticObject); 
@@ -476,6 +474,18 @@ public class CPLSemanticSequencer extends CompleteOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     DescriptionCP returns DescriptionCP
+	 *
+	 * Constraint:
+	 *     (name=Identifier? ownedExpression=STRING)
+	 */
+	protected void sequence_DescriptionCP(ISerializationContext context, DescriptionCP semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ImportCP returns ImportCS
 	 *
 	 * Constraint:
@@ -483,24 +493,6 @@ public class CPLSemanticSequencer extends CompleteOCLSemanticSequencer {
 	 */
 	protected void sequence_ImportCP(ISerializationContext context, ImportCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     MessageCP returns MessageCP
-	 *
-	 * Constraint:
-	 *     ownedExpression=STRING
-	 */
-	protected void sequence_MessageCP(ISerializationContext context, MessageCP semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CPLPackage.Literals.MESSAGE_CP__OWNED_EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CPLPackage.Literals.MESSAGE_CP__OWNED_EXPRESSION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMessageCPAccess().getOwnedExpressionSTRINGTerminalRuleCall_2_0(), semanticObject.getOwnedExpression());
-		feeder.finish();
 	}
 	
 	
@@ -521,7 +513,7 @@ public class CPLSemanticSequencer extends CompleteOCLSemanticSequencer {
 	 *     TopLevelCP returns TopLevelCP
 	 *
 	 * Constraint:
-	 *     (name=Identifier ownedImports+=ImportCP+ ownedContexts+=ContextDeclCS+ ownedRelation+=RelationCP? ownedMessage+=MessageCP?)
+	 *     (name=Identifier ownedImports+=ImportCP+ ownedContexts+=ContextDeclCS+ ownedRelation+=RelationCP? ownedMessage+=DescriptionCP?)
 	 */
 	protected void sequence_TopLevelCP(ISerializationContext context, TopLevelCP semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

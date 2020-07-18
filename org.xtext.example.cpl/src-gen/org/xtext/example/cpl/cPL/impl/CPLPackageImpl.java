@@ -22,7 +22,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.EssentialOCLCSPackage;
 import org.xtext.example.cpl.cPL.CPLFactory;
 import org.xtext.example.cpl.cPL.CPLPackage;
 import org.xtext.example.cpl.cPL.ConditionCS;
-import org.xtext.example.cpl.cPL.MessageCP;
+import org.xtext.example.cpl.cPL.DescriptionCP;
 import org.xtext.example.cpl.cPL.RelationCP;
 import org.xtext.example.cpl.cPL.TopLevelCP;
 
@@ -53,7 +53,7 @@ public class CPLPackageImpl extends EPackageImpl implements CPLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass messageCPEClass = null;
+  private EClass descriptionCPEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -217,9 +217,9 @@ public class CPLPackageImpl extends EPackageImpl implements CPLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMessageCP()
+  public EClass getDescriptionCP()
   {
-    return messageCPEClass;
+    return descriptionCPEClass;
   }
 
   /**
@@ -227,9 +227,19 @@ public class CPLPackageImpl extends EPackageImpl implements CPLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMessageCP_OwnedExpression()
+  public EAttribute getDescriptionCP_Name()
   {
-    return (EAttribute)messageCPEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)descriptionCPEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDescriptionCP_OwnedExpression()
+  {
+    return (EAttribute)descriptionCPEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -302,8 +312,9 @@ public class CPLPackageImpl extends EPackageImpl implements CPLPackage
     relationCPEClass = createEClass(RELATION_CP);
     createEReference(relationCPEClass, RELATION_CP__OWNED_CONDITIONS);
 
-    messageCPEClass = createEClass(MESSAGE_CP);
-    createEAttribute(messageCPEClass, MESSAGE_CP__OWNED_EXPRESSION);
+    descriptionCPEClass = createEClass(DESCRIPTION_CP);
+    createEAttribute(descriptionCPEClass, DESCRIPTION_CP__NAME);
+    createEAttribute(descriptionCPEClass, DESCRIPTION_CP__OWNED_EXPRESSION);
 
     conditionCSEClass = createEClass(CONDITION_CS);
     createEAttribute(conditionCSEClass, CONDITION_CS__OWNED_ELEMENT_A);
@@ -351,13 +362,14 @@ public class CPLPackageImpl extends EPackageImpl implements CPLPackage
     initEReference(getTopLevelCP_OwnedImports(), theBaseCSPackage.getImportCS(), null, "ownedImports", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTopLevelCP_OwnedContexts(), theCompleteOCLCSPackage.getContextDeclCS(), null, "ownedContexts", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTopLevelCP_OwnedRelation(), this.getRelationCP(), null, "ownedRelation", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTopLevelCP_OwnedMessage(), this.getMessageCP(), null, "ownedMessage", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTopLevelCP_OwnedMessage(), this.getDescriptionCP(), null, "ownedMessage", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relationCPEClass, RelationCP.class, "RelationCP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRelationCP_OwnedConditions(), this.getConditionCS(), null, "ownedConditions", null, 0, -1, RelationCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(messageCPEClass, MessageCP.class, "MessageCP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMessageCP_OwnedExpression(), theEcorePackage.getEString(), "ownedExpression", null, 0, 1, MessageCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(descriptionCPEClass, DescriptionCP.class, "DescriptionCP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDescriptionCP_Name(), theEcorePackage.getEString(), "name", null, 0, 1, DescriptionCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDescriptionCP_OwnedExpression(), theEcorePackage.getEString(), "ownedExpression", null, 0, 1, DescriptionCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionCSEClass, ConditionCS.class, "ConditionCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConditionCS_OwnedElementA(), theEcorePackage.getEString(), "ownedElementA", null, 0, 1, ConditionCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

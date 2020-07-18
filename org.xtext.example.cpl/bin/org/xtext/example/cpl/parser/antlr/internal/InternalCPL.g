@@ -193,9 +193,9 @@ ruleTopLevelCP returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTopLevelCPAccess().getOwnedMessageMessageCPParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getTopLevelCPAccess().getOwnedMessageDescriptionCPParserRuleCall_6_0());
 				}
-				lv_ownedMessage_10_0=ruleMessageCP
+				lv_ownedMessage_10_0=ruleDescriptionCP
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTopLevelCPRule());
@@ -204,7 +204,7 @@ ruleTopLevelCP returns [EObject current=null]
 						$current,
 						"ownedMessage",
 						lv_ownedMessage_10_0,
-						"org.xtext.example.cpl.CPL.MessageCP");
+						"org.xtext.example.cpl.CPL.DescriptionCP");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -367,15 +367,15 @@ ruleRelationCP returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleMessageCP
-entryRuleMessageCP returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMessageCPRule()); }
-	iv_ruleMessageCP=ruleMessageCP
-	{ $current=$iv_ruleMessageCP.current; }
+// Entry rule entryRuleDescriptionCP
+entryRuleDescriptionCP returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDescriptionCPRule()); }
+	iv_ruleDescriptionCP=ruleDescriptionCP
+	{ $current=$iv_ruleDescriptionCP.current; }
 	EOF;
 
-// Rule MessageCP
-ruleMessageCP returns [EObject current=null]
+// Rule DescriptionCP
+ruleDescriptionCP returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -383,35 +383,64 @@ ruleMessageCP returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='message'
+		otherlv_0='description'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getMessageCPAccess().getMessageKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getDescriptionCPAccess().getDescriptionKeyword_0());
 		}
-		otherlv_1='{'
+		(
+			otherlv_1='of'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getDescriptionCPAccess().getOfKeyword_1_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDescriptionCPAccess().getNameIdentifierParserRuleCall_1_1_0());
+					}
+					lv_name_2_0=ruleIdentifier
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDescriptionCPRule());
+						}
+						set(
+							$current,
+							"name",
+							lv_name_2_0,
+							"org.eclipse.ocl.xtext.base.Base.Identifier");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_3='conflict'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getDescriptionCPAccess().getConflictKeyword_1_2());
+			}
+		)?
+		otherlv_4='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getMessageCPAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_4, grammarAccess.getDescriptionCPAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
-				lv_ownedExpression_2_0=RULE_STRING
+				lv_ownedExpression_5_0=RULE_STRING
 				{
-					newLeafNode(lv_ownedExpression_2_0, grammarAccess.getMessageCPAccess().getOwnedExpressionSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_ownedExpression_5_0, grammarAccess.getDescriptionCPAccess().getOwnedExpressionSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMessageCPRule());
+						$current = createModelElement(grammarAccess.getDescriptionCPRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"ownedExpression",
-						lv_ownedExpression_2_0,
+						lv_ownedExpression_5_0,
 						"org.xtext.example.cpl.CPL.STRING");
 				}
 			)
 		)
-		otherlv_3='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getMessageCPAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_6, grammarAccess.getDescriptionCPAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;

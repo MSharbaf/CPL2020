@@ -150,14 +150,23 @@ public interface CPLPackage extends EPackage
   int RELATION_CP_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.cpl.cPL.impl.MessageCPImpl <em>Message CP</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.cpl.cPL.impl.DescriptionCPImpl <em>Description CP</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.cpl.cPL.impl.MessageCPImpl
-   * @see org.xtext.example.cpl.cPL.impl.CPLPackageImpl#getMessageCP()
+   * @see org.xtext.example.cpl.cPL.impl.DescriptionCPImpl
+   * @see org.xtext.example.cpl.cPL.impl.CPLPackageImpl#getDescriptionCP()
    * @generated
    */
-  int MESSAGE_CP = 2;
+  int DESCRIPTION_CP = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION_CP__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Owned Expression</b></em>' attribute.
@@ -166,16 +175,16 @@ public interface CPLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE_CP__OWNED_EXPRESSION = 0;
+  int DESCRIPTION_CP__OWNED_EXPRESSION = 1;
 
   /**
-   * The number of structural features of the '<em>Message CP</em>' class.
+   * The number of structural features of the '<em>Description CP</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MESSAGE_CP_FEATURE_COUNT = 1;
+  int DESCRIPTION_CP_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.cpl.cPL.impl.ConditionCSImpl <em>Condition CS</em>}' class.
@@ -302,25 +311,36 @@ public interface CPLPackage extends EPackage
   EReference getRelationCP_OwnedConditions();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.cpl.cPL.MessageCP <em>Message CP</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.cpl.cPL.DescriptionCP <em>Description CP</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Message CP</em>'.
-   * @see org.xtext.example.cpl.cPL.MessageCP
+   * @return the meta object for class '<em>Description CP</em>'.
+   * @see org.xtext.example.cpl.cPL.DescriptionCP
    * @generated
    */
-  EClass getMessageCP();
+  EClass getDescriptionCP();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cpl.cPL.MessageCP#getOwnedExpression <em>Owned Expression</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.cpl.cPL.DescriptionCP#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.cpl.cPL.DescriptionCP#getName()
+   * @see #getDescriptionCP()
+   * @generated
+   */
+  EAttribute getDescriptionCP_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.cpl.cPL.DescriptionCP#getOwnedExpression <em>Owned Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Owned Expression</em>'.
-   * @see org.xtext.example.cpl.cPL.MessageCP#getOwnedExpression()
-   * @see #getMessageCP()
+   * @see org.xtext.example.cpl.cPL.DescriptionCP#getOwnedExpression()
+   * @see #getDescriptionCP()
    * @generated
    */
-  EAttribute getMessageCP_OwnedExpression();
+  EAttribute getDescriptionCP_OwnedExpression();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.cpl.cPL.ConditionCS <em>Condition CS</em>}'.
@@ -446,14 +466,22 @@ public interface CPLPackage extends EPackage
     EReference RELATION_CP__OWNED_CONDITIONS = eINSTANCE.getRelationCP_OwnedConditions();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.cpl.cPL.impl.MessageCPImpl <em>Message CP</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.cpl.cPL.impl.DescriptionCPImpl <em>Description CP</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.cpl.cPL.impl.MessageCPImpl
-     * @see org.xtext.example.cpl.cPL.impl.CPLPackageImpl#getMessageCP()
+     * @see org.xtext.example.cpl.cPL.impl.DescriptionCPImpl
+     * @see org.xtext.example.cpl.cPL.impl.CPLPackageImpl#getDescriptionCP()
      * @generated
      */
-    EClass MESSAGE_CP = eINSTANCE.getMessageCP();
+    EClass DESCRIPTION_CP = eINSTANCE.getDescriptionCP();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DESCRIPTION_CP__NAME = eINSTANCE.getDescriptionCP_Name();
 
     /**
      * The meta object literal for the '<em><b>Owned Expression</b></em>' attribute feature.
@@ -461,7 +489,7 @@ public interface CPLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MESSAGE_CP__OWNED_EXPRESSION = eINSTANCE.getMessageCP_OwnedExpression();
+    EAttribute DESCRIPTION_CP__OWNED_EXPRESSION = eINSTANCE.getDescriptionCP_OwnedExpression();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.cpl.cPL.impl.ConditionCSImpl <em>Condition CS</em>}' class.

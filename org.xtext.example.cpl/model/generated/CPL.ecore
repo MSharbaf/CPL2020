@@ -12,13 +12,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRelation" upperBound="-1"
         eType="#//RelationCP" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedMessage" upperBound="-1"
-        eType="#//MessageCP" containment="true"/>
+        eType="#//DescriptionCP" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelationCP">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedConditions" upperBound="-1"
         eType="#//ConditionCS" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MessageCP">
+  <eClassifiers xsi:type="ecore:EClass" name="DescriptionCP">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ownedExpression" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionCS">

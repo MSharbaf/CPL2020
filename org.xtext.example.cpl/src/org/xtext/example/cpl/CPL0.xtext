@@ -10,11 +10,11 @@ TopLevelCP:
 		(ownedDomains+=DomainCP)+
 		(ownedFragment+=DeclarationCP)+
 		(ownedRelation+=StatementCP)?
-		(ownedMessage+=MessageCP)? 
+		(ownedDescription+=DescriptionCP)? 
 	'}' ;
 
 DomainCP returns base::ImportCS:
-	('import' | 'domain') (name=Identifier ':')? 
+	'domain' (name=Identifier ':')? 
 		ownedPathName=URIPathNameCS (isAll?='::*')? ;
 		
 DeclarationCP:
@@ -27,8 +27,8 @@ StatementCP:
 		(('or'|'and')? ownedConditions+=ConditionCS)+
 	'}' ;
 
-MessageCP:
-	'message' '{' ownedExpression=STRING '}' ;
+DescriptionCP:
+	'description' '{' ownedExpression=STRING '}' ;
 
 
 @Override 

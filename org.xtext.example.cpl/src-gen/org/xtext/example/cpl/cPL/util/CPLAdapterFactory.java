@@ -86,9 +86,9 @@ public class CPLAdapterFactory extends AdapterFactoryImpl
         return createRelationCPAdapter();
       }
       @Override
-      public Adapter caseMessageCP(MessageCP object)
+      public Adapter caseDescriptionCP(DescriptionCP object)
       {
-        return createMessageCPAdapter();
+        return createDescriptionCPAdapter();
       }
       @Override
       public Adapter caseConditionCS(ConditionCS object)
@@ -148,16 +148,16 @@ public class CPLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cpl.cPL.MessageCP <em>Message CP</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cpl.cPL.DescriptionCP <em>Description CP</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.cpl.cPL.MessageCP
+   * @see org.xtext.example.cpl.cPL.DescriptionCP
    * @generated
    */
-  public Adapter createMessageCPAdapter()
+  public Adapter createDescriptionCPAdapter()
   {
     return null;
   }

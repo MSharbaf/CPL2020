@@ -14,7 +14,7 @@ import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.xtext.example.cpl.cPL.MessageCP;
+import org.xtext.example.cpl.cPL.DescriptionCP;
 import org.xtext.example.cpl.cPL.RelationCP;
 import org.xtext.example.cpl.cPL.TopLevelCP;
 import org.xtext.example.cpl.services.CPLGrammarAccess;
@@ -38,9 +38,9 @@ public class CPLFormatter extends AbstractFormatter2 {
     for (final RelationCP relationCP : _ownedRelation) {
       document.<RelationCP>format(relationCP);
     }
-    EList<MessageCP> _ownedMessage = topLevelCP.getOwnedMessage();
-    for (final MessageCP messageCP : _ownedMessage) {
-      document.<MessageCP>format(messageCP);
+    EList<DescriptionCP> _ownedMessage = topLevelCP.getOwnedMessage();
+    for (final DescriptionCP messageCP : _ownedMessage) {
+      document.<DescriptionCP>format(messageCP);
     }
   }
   

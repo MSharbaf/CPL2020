@@ -88,7 +88,8 @@ public class CPLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportCPAccess().getGroup_1(), "rule__ImportCP__Group_1__0");
 			builder.put(grammarAccess.getRelationCPAccess().getGroup(), "rule__RelationCP__Group__0");
 			builder.put(grammarAccess.getRelationCPAccess().getGroup_2(), "rule__RelationCP__Group_2__0");
-			builder.put(grammarAccess.getMessageCPAccess().getGroup(), "rule__MessageCP__Group__0");
+			builder.put(grammarAccess.getDescriptionCPAccess().getGroup(), "rule__DescriptionCP__Group__0");
+			builder.put(grammarAccess.getDescriptionCPAccess().getGroup_1(), "rule__DescriptionCP__Group_1__0");
 			builder.put(grammarAccess.getConditionCSAccess().getGroup(), "rule__ConditionCS__Group__0");
 			builder.put(grammarAccess.getFQNAccess().getGroup(), "rule__FQN__Group__0");
 			builder.put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
@@ -234,7 +235,8 @@ public class CPLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportCPAccess().getOwnedPathNameAssignment_2(), "rule__ImportCP__OwnedPathNameAssignment_2");
 			builder.put(grammarAccess.getImportCPAccess().getIsAllAssignment_3(), "rule__ImportCP__IsAllAssignment_3");
 			builder.put(grammarAccess.getRelationCPAccess().getOwnedConditionsAssignment_2_1(), "rule__RelationCP__OwnedConditionsAssignment_2_1");
-			builder.put(grammarAccess.getMessageCPAccess().getOwnedExpressionAssignment_2(), "rule__MessageCP__OwnedExpressionAssignment_2");
+			builder.put(grammarAccess.getDescriptionCPAccess().getNameAssignment_1_1(), "rule__DescriptionCP__NameAssignment_1_1");
+			builder.put(grammarAccess.getDescriptionCPAccess().getOwnedExpressionAssignment_3(), "rule__DescriptionCP__OwnedExpressionAssignment_3");
 			builder.put(grammarAccess.getConditionCSAccess().getOwnedElementAAssignment_0(), "rule__ConditionCS__OwnedElementAAssignment_0");
 			builder.put(grammarAccess.getConditionCSAccess().getOwnedElementBAssignment_2(), "rule__ConditionCS__OwnedElementBAssignment_2");
 			builder.put(grammarAccess.getCompleteOCLDocumentCSAccess().getOwnedImportsAssignment_0(), "rule__CompleteOCLDocumentCS__OwnedImportsAssignment_0");

@@ -43,19 +43,19 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOwnedRelationAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cOwnedRelationRelationCPParserRuleCall_5_0 = (RuleCall)cOwnedRelationAssignment_5.eContents().get(0);
 		private final Assignment cOwnedMessageAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cOwnedMessageMessageCPParserRuleCall_6_0 = (RuleCall)cOwnedMessageAssignment_6.eContents().get(0);
+		private final RuleCall cOwnedMessageDescriptionCPParserRuleCall_6_0 = (RuleCall)cOwnedMessageAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//TopLevelCP:
 		//	'conflict' name=Identifier '{'
 		//	ownedImports+=ImportCP+ ('inmodel' UnrestrictedName '{' ownedContexts+=ContextDeclCS+ '}')+
 		//	ownedRelation+=RelationCP?
-		//	ownedMessage+=MessageCP?
+		//	ownedMessage+=DescriptionCP?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'conflict' name=Identifier '{' ownedImports+=ImportCP+ ('inmodel' UnrestrictedName '{' ownedContexts+=ContextDeclCS+
-		//'}')+ ownedRelation+=RelationCP? ownedMessage+=MessageCP? '}'
+		//'}')+ ownedRelation+=RelationCP? ownedMessage+=DescriptionCP? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'conflict'
@@ -103,11 +103,11 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 		//RelationCP
 		public RuleCall getOwnedRelationRelationCPParserRuleCall_5_0() { return cOwnedRelationRelationCPParserRuleCall_5_0; }
 		
-		//ownedMessage+=MessageCP?
+		//ownedMessage+=DescriptionCP?
 		public Assignment getOwnedMessageAssignment_6() { return cOwnedMessageAssignment_6; }
 		
-		//MessageCP
-		public RuleCall getOwnedMessageMessageCPParserRuleCall_6_0() { return cOwnedMessageMessageCPParserRuleCall_6_0; }
+		//DescriptionCP
+		public RuleCall getOwnedMessageDescriptionCPParserRuleCall_6_0() { return cOwnedMessageDescriptionCPParserRuleCall_6_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
@@ -215,36 +215,56 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
-	public class MessageCPElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cpl.CPL.MessageCP");
+	public class DescriptionCPElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cpl.CPL.DescriptionCP");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMessageKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cOwnedExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cOwnedExpressionSTRINGTerminalRuleCall_2_0 = (RuleCall)cOwnedExpressionAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cDescriptionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cOfKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cNameIdentifierParserRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final Keyword cConflictKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cOwnedExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cOwnedExpressionSTRINGTerminalRuleCall_3_0 = (RuleCall)cOwnedExpressionAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//MessageCP:
-		//	'message' '{' ownedExpression=STRING '}';
+		//DescriptionCP:
+		//	'description' ('of' name=Identifier 'conflict')? '{' ownedExpression=STRING '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'message' '{' ownedExpression=STRING '}'
+		//'description' ('of' name=Identifier 'conflict')? '{' ownedExpression=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'message'
-		public Keyword getMessageKeyword_0() { return cMessageKeyword_0; }
+		//'description'
+		public Keyword getDescriptionKeyword_0() { return cDescriptionKeyword_0; }
+		
+		//('of' name=Identifier 'conflict')?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'of'
+		public Keyword getOfKeyword_1_0() { return cOfKeyword_1_0; }
+		
+		//name=Identifier
+		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+		
+		//Identifier
+		public RuleCall getNameIdentifierParserRuleCall_1_1_0() { return cNameIdentifierParserRuleCall_1_1_0; }
+		
+		//'conflict'
+		public Keyword getConflictKeyword_1_2() { return cConflictKeyword_1_2; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//ownedExpression=STRING
-		public Assignment getOwnedExpressionAssignment_2() { return cOwnedExpressionAssignment_2; }
+		public Assignment getOwnedExpressionAssignment_3() { return cOwnedExpressionAssignment_3; }
 		
 		//STRING
-		public RuleCall getOwnedExpressionSTRINGTerminalRuleCall_2_0() { return cOwnedExpressionSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getOwnedExpressionSTRINGTerminalRuleCall_3_0() { return cOwnedExpressionSTRINGTerminalRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class ConditionCSElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cpl.CPL.ConditionCS");
@@ -387,7 +407,7 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 	private final TopLevelCPElements pTopLevelCP;
 	private final ImportCPElements pImportCP;
 	private final RelationCPElements pRelationCP;
-	private final MessageCPElements pMessageCP;
+	private final DescriptionCPElements pDescriptionCP;
 	private final ConditionCSElements pConditionCS;
 	private final FQNElements pFQN;
 	private final TerminalRule tSTRING;
@@ -412,7 +432,7 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTopLevelCP = new TopLevelCPElements();
 		this.pImportCP = new ImportCPElements();
 		this.pRelationCP = new RelationCPElements();
-		this.pMessageCP = new MessageCPElements();
+		this.pDescriptionCP = new DescriptionCPElements();
 		this.pConditionCS = new ConditionCSElements();
 		this.pFQN = new FQNElements();
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cpl.CPL.STRING");
@@ -457,7 +477,7 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 	//	'conflict' name=Identifier '{'
 	//	ownedImports+=ImportCP+ ('inmodel' UnrestrictedName '{' ownedContexts+=ContextDeclCS+ '}')+
 	//	ownedRelation+=RelationCP?
-	//	ownedMessage+=MessageCP?
+	//	ownedMessage+=DescriptionCP?
 	//	'}';
 	public TopLevelCPElements getTopLevelCPAccess() {
 		return pTopLevelCP;
@@ -488,14 +508,14 @@ public class CPLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRelationCPAccess().getRule();
 	}
 	
-	//MessageCP:
-	//	'message' '{' ownedExpression=STRING '}';
-	public MessageCPElements getMessageCPAccess() {
-		return pMessageCP;
+	//DescriptionCP:
+	//	'description' ('of' name=Identifier 'conflict')? '{' ownedExpression=STRING '}';
+	public DescriptionCPElements getDescriptionCPAccess() {
+		return pDescriptionCP;
 	}
 	
-	public ParserRule getMessageCPRule() {
-		return getMessageCPAccess().getRule();
+	public ParserRule getDescriptionCPRule() {
+		return getDescriptionCPAccess().getRule();
 	}
 	
 	//ConditionCS:

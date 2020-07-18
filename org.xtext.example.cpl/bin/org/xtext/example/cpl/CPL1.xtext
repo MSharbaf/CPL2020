@@ -13,7 +13,7 @@ TopLevelCP:
 		(ownedImports+=ImportCP)+
 		('inmodel' UnrestrictedName '{' ownedContexts+=ContextDeclCS+ '}')+
 		(ownedRelation+=RelationCP)?
-		(ownedMessage+=MessageCP)? 
+		(ownedMessage+=DescriptionCP)? 
 	'}'
 ;
 
@@ -27,12 +27,12 @@ RelationCP:
 	'}'
 ;
 
-MessageCP:
-	'message' '{' ownedExpression=STRING '}'
+DescriptionCP:
+	'description' ('of' name=Identifier 'conflict')? '{' ownedExpression=STRING '}'
 ;
 
 ConditionCS:
-	(ownedElementA=FQN)? ('isEquivalent'|'isContradict'|'>'|'<'|'=='|'<>'|'!'|'>='|'=<'|'IN'|'NotIN')? (ownedElementB=FQN) 
+	(ownedElementA=FQN)? ('isEquivalent'|'isContradict'|'>'|'<'|'='|'<>'|'!'|'>='|'=<'|'IN'|'NotIN')? (ownedElementB=FQN) 
 ;
 
 FQN:

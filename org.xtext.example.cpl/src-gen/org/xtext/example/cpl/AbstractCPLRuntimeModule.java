@@ -273,5 +273,5 @@ public abstract class AbstractCPLRuntimeModule extends DefaultRuntimeModule {
 	public Class<? extends org.eclipse.xtext.resource.XtextResource> bindXtextResource() {
 		return org.eclipse.ocl.xtext.completeocl.utilities.CompleteOCLCSResource.class;
 	}
-
+	
 }

@@ -8,7 +8,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.ocl.xtext.completeocl.validation.CompleteOCLJavaValidator;
 
-public abstract class AbstractCPLValidator extends CompleteOCLJavaValidator {
+public abstract class AbstractCPLValidator extends org.eclipse.ocl.xtext.essentialocl.validation.EssentialOCLJavaValidator {
 	
 	@Override
 	protected List<EPackage> getEPackages() {

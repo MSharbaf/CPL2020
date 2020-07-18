@@ -16,8 +16,9 @@
     <genClasses ecoreClass="CPL.ecore#//RelationCP">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CPL.ecore#//RelationCP/ownedConditions"/>
     </genClasses>
-    <genClasses ecoreClass="CPL.ecore#//MessageCP">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPL.ecore#//MessageCP/ownedExpression"/>
+    <genClasses ecoreClass="CPL.ecore#//DescriptionCP">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPL.ecore#//DescriptionCP/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPL.ecore#//DescriptionCP/ownedExpression"/>
     </genClasses>
     <genClasses ecoreClass="CPL.ecore#//ConditionCS">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CPL.ecore#//ConditionCS/ownedElementA"/>

@@ -11,23 +11,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.cpl.cPL.CPLPackage;
-import org.xtext.example.cpl.cPL.MessageCP;
+import org.xtext.example.cpl.cPL.DescriptionCP;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Message CP</b></em>'.
+ * An implementation of the model object '<em><b>Description CP</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cpl.cPL.impl.MessageCPImpl#getOwnedExpression <em>Owned Expression</em>}</li>
+ *   <li>{@link org.xtext.example.cpl.cPL.impl.DescriptionCPImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.cpl.cPL.impl.DescriptionCPImpl#getOwnedExpression <em>Owned Expression</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MessageCPImpl extends MinimalEObjectImpl.Container implements MessageCP
+public class DescriptionCPImpl extends MinimalEObjectImpl.Container implements DescriptionCP
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getOwnedExpression() <em>Owned Expression</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -53,7 +74,7 @@ public class MessageCPImpl extends MinimalEObjectImpl.Container implements Messa
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MessageCPImpl()
+  protected DescriptionCPImpl()
   {
     super();
   }
@@ -66,7 +87,30 @@ public class MessageCPImpl extends MinimalEObjectImpl.Container implements Messa
   @Override
   protected EClass eStaticClass()
   {
-    return CPLPackage.Literals.MESSAGE_CP;
+    return CPLPackage.Literals.DESCRIPTION_CP;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CPLPackage.DESCRIPTION_CP__NAME, oldName, name));
   }
 
   /**
@@ -89,7 +133,7 @@ public class MessageCPImpl extends MinimalEObjectImpl.Container implements Messa
     String oldOwnedExpression = ownedExpression;
     ownedExpression = newOwnedExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CPLPackage.MESSAGE_CP__OWNED_EXPRESSION, oldOwnedExpression, ownedExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, CPLPackage.DESCRIPTION_CP__OWNED_EXPRESSION, oldOwnedExpression, ownedExpression));
   }
 
   /**
@@ -102,7 +146,9 @@ public class MessageCPImpl extends MinimalEObjectImpl.Container implements Messa
   {
     switch (featureID)
     {
-      case CPLPackage.MESSAGE_CP__OWNED_EXPRESSION:
+      case CPLPackage.DESCRIPTION_CP__NAME:
+        return getName();
+      case CPLPackage.DESCRIPTION_CP__OWNED_EXPRESSION:
         return getOwnedExpression();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -118,7 +164,10 @@ public class MessageCPImpl extends MinimalEObjectImpl.Container implements Messa
   {
     switch (featureID)
     {
-      case CPLPackage.MESSAGE_CP__OWNED_EXPRESSION:
+      case CPLPackage.DESCRIPTION_CP__NAME:
+        setName((String)newValue);
+        return;
+      case CPLPackage.DESCRIPTION_CP__OWNED_EXPRESSION:
         setOwnedExpression((String)newValue);
         return;
     }
@@ -135,7 +184,10 @@ public class MessageCPImpl extends MinimalEObjectImpl.Container implements Messa
   {
     switch (featureID)
     {
-      case CPLPackage.MESSAGE_CP__OWNED_EXPRESSION:
+      case CPLPackage.DESCRIPTION_CP__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case CPLPackage.DESCRIPTION_CP__OWNED_EXPRESSION:
         setOwnedExpression(OWNED_EXPRESSION_EDEFAULT);
         return;
     }
@@ -152,7 +204,9 @@ public class MessageCPImpl extends MinimalEObjectImpl.Container implements Messa
   {
     switch (featureID)
     {
-      case CPLPackage.MESSAGE_CP__OWNED_EXPRESSION:
+      case CPLPackage.DESCRIPTION_CP__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case CPLPackage.DESCRIPTION_CP__OWNED_EXPRESSION:
         return OWNED_EXPRESSION_EDEFAULT == null ? ownedExpression != null : !OWNED_EXPRESSION_EDEFAULT.equals(ownedExpression);
     }
     return super.eIsSet(featureID);
@@ -169,10 +223,12 @@ public class MessageCPImpl extends MinimalEObjectImpl.Container implements Messa
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (ownedExpression: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", ownedExpression: ");
     result.append(ownedExpression);
     result.append(')');
     return result.toString();
   }
 
-} //MessageCPImpl
+} //DescriptionCPImpl

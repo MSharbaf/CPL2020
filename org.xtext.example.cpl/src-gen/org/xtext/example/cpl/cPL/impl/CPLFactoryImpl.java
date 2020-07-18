@@ -67,7 +67,7 @@ public class CPLFactoryImpl extends EFactoryImpl implements CPLFactory
     {
       case CPLPackage.TOP_LEVEL_CP: return createTopLevelCP();
       case CPLPackage.RELATION_CP: return createRelationCP();
-      case CPLPackage.MESSAGE_CP: return createMessageCP();
+      case CPLPackage.DESCRIPTION_CP: return createDescriptionCP();
       case CPLPackage.CONDITION_CS: return createConditionCS();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -101,10 +101,10 @@ public class CPLFactoryImpl extends EFactoryImpl implements CPLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public MessageCP createMessageCP()
+  public DescriptionCP createDescriptionCP()
   {
-    MessageCPImpl messageCP = new MessageCPImpl();
-    return messageCP;
+    DescriptionCPImpl descriptionCP = new DescriptionCPImpl();
+    return descriptionCP;
   }
 
   /**

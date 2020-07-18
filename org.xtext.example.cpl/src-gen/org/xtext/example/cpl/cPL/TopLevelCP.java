@@ -5,9 +5,8 @@ package org.xtext.example.cpl.cPL;
 
 import org.eclipse.emf.common.util.EList;
 
-//import org.eclipse.emf.ecore.EObject;
-import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS;
 import org.eclipse.ocl.xtext.basecs.ImportCS;
+import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS;
 
 import org.eclipse.ocl.xtext.completeoclcs.ContextDeclCS;
 
@@ -109,7 +108,7 @@ public interface TopLevelCP extends CompleteOCLDocumentCS
 
   /**
    * Returns the value of the '<em><b>Owned Message</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.cpl.cPL.MessageCP}.
+   * The list contents are of type {@link org.xtext.example.cpl.cPL.DescriptionCP}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Owned Message</em>' containment reference list isn't clear,
@@ -121,6 +120,6 @@ public interface TopLevelCP extends CompleteOCLDocumentCS
    * @model containment="true"
    * @generated
    */
-  EList<MessageCP> getOwnedMessage();
+  EList<DescriptionCP> getOwnedMessage();
 
 } // TopLevelCP

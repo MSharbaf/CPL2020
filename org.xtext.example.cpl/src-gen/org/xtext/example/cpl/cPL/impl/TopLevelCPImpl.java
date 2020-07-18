@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-//import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -24,7 +24,7 @@ import org.eclipse.ocl.xtext.completeoclcs.impl.CompleteOCLDocumentCSImpl;
 import org.eclipse.ocl.xtext.completeoclcs.ContextDeclCS;
 
 import org.xtext.example.cpl.cPL.CPLPackage;
-import org.xtext.example.cpl.cPL.MessageCP;
+import org.xtext.example.cpl.cPL.DescriptionCP;
 import org.xtext.example.cpl.cPL.RelationCP;
 import org.xtext.example.cpl.cPL.TopLevelCP;
 
@@ -105,7 +105,7 @@ public class TopLevelCPImpl extends CompleteOCLDocumentCSImpl implements TopLeve
    * @generated
    * @ordered
    */
-  protected EList<MessageCP> ownedMessage;
+  protected EList<DescriptionCP> ownedMessage;
 
   /**
    * <!-- begin-user-doc -->
@@ -198,11 +198,11 @@ public class TopLevelCPImpl extends CompleteOCLDocumentCSImpl implements TopLeve
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<MessageCP> getOwnedMessage()
+  public EList<DescriptionCP> getOwnedMessage()
   {
     if (ownedMessage == null)
     {
-      ownedMessage = new EObjectContainmentEList<MessageCP>(MessageCP.class, this, CPLPackage.TOP_LEVEL_CP__OWNED_MESSAGE);
+      ownedMessage = new EObjectContainmentEList<DescriptionCP>(DescriptionCP.class, this, CPLPackage.TOP_LEVEL_CP__OWNED_MESSAGE);
     }
     return ownedMessage;
   }
@@ -281,7 +281,7 @@ public class TopLevelCPImpl extends CompleteOCLDocumentCSImpl implements TopLeve
         return;
       case CPLPackage.TOP_LEVEL_CP__OWNED_MESSAGE:
         getOwnedMessage().clear();
-        getOwnedMessage().addAll((Collection<? extends MessageCP>)newValue);
+        getOwnedMessage().addAll((Collection<? extends DescriptionCP>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

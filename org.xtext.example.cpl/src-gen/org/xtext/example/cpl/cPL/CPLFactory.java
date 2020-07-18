@@ -42,13 +42,13 @@ public interface CPLFactory extends EFactory
   RelationCP createRelationCP();
 
   /**
-   * Returns a new object of class '<em>Message CP</em>'.
+   * Returns a new object of class '<em>Description CP</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Message CP</em>'.
+   * @return a new object of class '<em>Description CP</em>'.
    * @generated
    */
-  MessageCP createMessageCP();
+  DescriptionCP createDescriptionCP();
 
   /**
    * Returns a new object of class '<em>Condition CS</em>'.
